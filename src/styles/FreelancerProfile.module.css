@@ -161,3 +161,25 @@ button[type="submit"]:hover {
     padding: 2rem;
   }
 }
+
+.profileImageSection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.profileImage {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 3px solid #00bfa6;
+  object-fit: cover;
+}
+
+.profileImageUpload {
+  margin-bottom: 1rem;
+}
+
+.profileImageUpload input {
+  margin-top: 0.5rem;
+}

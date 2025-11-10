@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/Dashboard.module.css";
 import NavigationBar from "./NavigationBar";
 import API from "../api.js";
-import Spinner from "./Spinner"; // 🌀 Import spinner
+import Spinner from "./Spinner"; 
 
 function Dashboard() {
   const [profile, setProfile] = useState(null);
   const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true); // 🧠 loading state added
+  const [loading, setLoading] = useState(true); 
   const [form, setForm] = useState({
     title: "",
     description: "",

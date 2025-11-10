@@ -187,3 +187,13 @@
     font-size: 1.8rem;
   }
 }
+
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 20px auto; /* Center and give space below */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
