@@ -2,7 +2,7 @@
    Light & Dark Mode Variables
    ============================== */
 :root {
-  --container-bg: rgba(225, 199, 221, 0.85); /* light glass card */
+  --container-bg: rgba(225, 199, 221, 0.85);
   --container-border: rgba(255, 255, 255, 0.3);
   --container-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
   --button-bg: linear-gradient(135deg, #7c3aed, #9333ea);
@@ -14,7 +14,7 @@
 }
 
 [data-theme="dark"] {
-  --container-bg: rgba(30, 30, 50, 0.85); /* darker glass card */
+  --container-bg: rgba(30, 30, 50, 0.85);
   --container-border: rgba(255, 255, 255, 0.1);
   --container-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
   --button-bg: linear-gradient(135deg, #6b21a8, #4c1d95);
@@ -32,17 +32,16 @@
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 60%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   background: url("https://png.pngtree.com/thumb_back/fh260/background/20220427/pngtree-home-office-banner-freelance-work-image_1091574.jpg")
     no-repeat center center/cover;
   font-family: "Poppins", sans-serif;
-  margin: 0;
+  padding: 4rem 5rem;
   transition: all 0.3s ease;
 }
 
-/* Overlay to change image theme dynamically */
 .page::before {
   content: "";
   position: absolute;
@@ -53,30 +52,43 @@
   pointer-events: none;
   transition: background 0.3s ease, filter 0.3s ease;
   z-index: 0;
-  border-radius: inherit;
 }
 
 /* ==============================
-   Glass-Style Card
+   Glass-Style Container
    ============================== */
 .container {
   position: relative;
   max-width: 600px;
-  text-align: center;
   background: var(--container-bg);
   border: 1px solid var(--container-border);
-  padding: 3rem;
+  padding: 2.5rem 3rem;
   border-radius: 1.2rem;
   box-shadow: var(--container-shadow);
   backdrop-filter: blur(10px);
   color: var(--text, #1e1b4b);
-  z-index: 1; /* above overlay */
+  z-index: 1;
   transition: all 0.3s ease;
+  text-align: center; 
+  padding-bottom: 50px;
 }
 
 .container:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* ==============================
+   Logo
+   ============================== */
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* ==============================
@@ -100,100 +112,111 @@
 /* ==============================
    Buttons
    ============================== */
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
+.buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
 /* Login Button */
 .loginBtn {
-  --button-bg: #10b981;       /* green */
-  --button-hover: #059669;    /* darker green */
-  --button-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
-  
-  background: var(--button-bg);
+  background: #10b981;
   color: white;
   font-weight: 600;
-  border: 2px solid #059669;  /* border added */
+  border: 2px solid #059669;
   padding: 0.9rem 2rem;
   border-radius: 0.8rem;
   cursor: pointer;
   transition: all 0.4s ease;
-  box-shadow: var(--button-shadow);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
   font-size: 1rem;
   letter-spacing: 0.3px;
 }
 
 .loginBtn:hover {
-  background: var(--button-hover);
+  background: #059669;
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 8px 25px rgba(5, 150, 105, 0.45);
 }
 
-.loginBtn:active {
-  transform: translateY(1px) scale(0.98);
-  box-shadow: 0 3px 12px rgba(5, 150, 105, 0.3);
-}
-
 /* Register Button */
 .registerBtn {
-  --button-bg: #3b82f6;       /* blue */
-  --button-hover: #1e40af;    /* darker blue */
-  --button-shadow: 0 4px 15px rgba(59, 130, 246, 0.25);
-  
-  background: var(--button-bg);
+  background: #3b82f6;
   color: white;
   font-weight: 600;
-  border: 2px solid #1e40af;  /* border added */
+  border: 2px solid #1e40af;
   padding: 0.9rem 2rem;
   border-radius: 0.8rem;
   cursor: pointer;
   transition: all 0.4s ease;
-  box-shadow: var(--button-shadow);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.25);
   font-size: 1rem;
   letter-spacing: 0.3px;
 }
 
 .registerBtn:hover {
-  background: var(--button-hover);
+  background: #1e40af;
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 8px 25px rgba(30, 64, 175, 0.45);
 }
 
-.registerBtn:active {
-  transform: translateY(1px) scale(0.98);
-  box-shadow: 0 3px 12px rgba(30, 64, 175, 0.3);
+.logo { 
+  width: 100px; 
+  height: 100px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+  display: block; 
+  margin: 0 auto 20px auto;
+  margin-left: 160px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }
+
+/* ==============================
+   How It Works Section
+   ============================== */
+.howItWorks {
+  margin-top: 60px;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 25px 40px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 500px;
+  text-align: left; /* left aligned */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  background: var(--container-bg);
+  padding-top: 50px;
 }
 
+.howItWorks h2 {
+  color: #f7f7f9;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  align-items: center;
+  margin-left: 50px;
+}
 
+.howItWorks p {
+  font-size: 1rem;
+  color: var(--subtitle-color);
+  line-height: 1.6;
+  margin-bottom: 10px;
+  align-items: center;
+}
 
 /* ==============================
    Responsive
    ============================== */
 @media (max-width: 768px) {
   .page {
-    justify-content: center;
-    padding-right: 0;
+    padding: 2rem;
+    align-items: center;
   }
 
-  .container {
-    width: 90%;
-    padding: 2rem;
+  .container, .howItWorks {
+    width: 95%;
   }
 
   .title {
     font-size: 1.8rem;
   }
-}
 
-.logo {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 20px auto; /* Center and give space below */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  .howItWorks h2 {
+    font-size: 1.3rem;
+  }
 }
